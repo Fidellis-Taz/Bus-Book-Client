@@ -1,7 +1,7 @@
 import { Card, Row, Col, Modal, Button } from "antd";
 import Router from "next/router";
 import SeatDetails from "./seatDetails";
-import { API } from "../../utils/config";
+import { API_BASE } from "../../utils/config";
 import { enc, dec } from "../../utils/encdec";
 
 class SingleCard extends React.Component {
