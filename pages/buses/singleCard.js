@@ -96,7 +96,7 @@ class SingleCard extends React.Component {
           <Row>
             <Col span={3}>
               <img
-                src={`${API_ROOT}/uploads/${bus && bus.image}`}
+                src={`${API}/uploads/${bus && bus.image}`}
                 alt="suspense"
                 className="bus-thumbnail"
               />
