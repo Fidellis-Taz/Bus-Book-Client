@@ -22,7 +22,7 @@ const Buses = ({ resp, info }) => {
   return (
     <Layout>
       <Param info={info}>
-        <SearchMenu buses={buses} info={info} />
+        <SearchMenu buses={buses} info={info && info} />
         <Row className="row-container">
           <Col span={6} className="main-filter">
             <Filters info={info} setBuses={setBuses} setLoading={setLoading} />
