@@ -27,8 +27,8 @@ const SearchMenu = ({ buses, info }) => {
   const [locations, setLocations] = useState([]);
   const [formData, setFormData] = useState({
     startLocation: "",
-    endLocation: info?.endLocation,
-    journeyDate: info?.journeyDate
+    endLocation: info.endLocation,
+    journeyDate: info.journeyDate
   });
 
   const onChangeFrom = val => {
