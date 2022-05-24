@@ -36,7 +36,7 @@ class SeatDetails extends Component {
     const { size, arr, oddA, oddB, evenA, evenB } = this.state;
     const { sold, booked } = this.props;
     return (
-      <div style={{display: "flex", justifyContent: "center"}}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={styles.wrapper}>
           <div className="steer" style={styles.steer}>
             <img style={styles.img} src="/static/img/steer.png" />
@@ -50,18 +50,18 @@ class SeatDetails extends Component {
                     type="primary"
                     size={size}
                     disabled={
-                      sold.includes(oddA[i])
+                      sold && sold.includes(oddA[i])
                         ? true
-                        : booked.includes(oddA[i])
-                        ? true
-                        : false
+                        : booked && booked.includes(oddA[i])
+                          ? true
+                          : false
                     }
                     style={
-                      sold.includes(oddA[i])
+                      sold && sold.includes(oddA[i])
                         ? styles.soldButton
-                        : booked.includes(oddA[i])
-                        ? styles.bookedButton
-                        : styles.button
+                        : booked && booked.includes(oddA[i])
+                          ? styles.bookedButton
+                          : styles.button
                     }
                     onClick={() => this.handleClick(oddA[i])}
                   >
@@ -72,18 +72,18 @@ class SeatDetails extends Component {
                     type="primary"
                     size={size}
                     disabled={
-                      sold.includes(evenA[i])
+                      sold && sold.includes(evenA[i])
                         ? true
-                        : booked.includes(evenA[i])
-                        ? true
-                        : false
+                        : booked && booked.includes(evenA[i])
+                          ? true
+                          : false
                     }
                     style={
-                      sold.includes(evenA[i])
+                      sold && sold.includes(evenA[i])
                         ? styles.soldButton
-                        : booked.includes(evenA[i])
-                        ? styles.bookedButton
-                        : styles.button
+                        : booked && booked.includes(evenA[i])
+                          ? styles.bookedButton
+                          : styles.button
                     }
                     onClick={() => this.handleClick(evenA[i])}
                   >
@@ -101,19 +101,19 @@ class SeatDetails extends Component {
                   className="btn btn-sm btn-primary"
                   type="primary"
                   disabled={
-                    sold.includes(oddB[i])
+                    sold && sold.includes(oddB[i])
                       ? true
-                      : booked.includes(oddB[i])
-                      ? true
-                      : false
+                      : booked && booked.includes(oddB[i])
+                        ? true
+                        : false
                   }
                   size={size}
                   style={
-                    sold.includes(oddB[i])
+                    sold && sold.includes(oddB[i])
                       ? styles.soldButton
-                      : booked.includes(oddB[i])
-                      ? styles.bookedButton
-                      : styles.button
+                      : booked && booked.includes(oddB[i])
+                        ? styles.bookedButton
+                        : styles.button
                   }
                   onClick={() => this.handleClick(oddB[i])}
                 >
@@ -123,19 +123,19 @@ class SeatDetails extends Component {
                   className="btn btn-sm btn-primary"
                   type="primary"
                   disabled={
-                    sold.includes(evenB[i])
+                    sold && sold.includes(evenB[i])
                       ? true
-                      : booked.includes(evenB[i])
-                      ? true
-                      : false
+                      : booked && booked.includes(evenB[i])
+                        ? true
+                        : false
                   }
                   size={size}
                   style={
-                    sold.includes(evenB[i])
+                    sold && sold.includes(evenB[i])
                       ? styles.soldButton
-                      : booked.includes(evenB[i])
-                      ? styles.bookedButton
-                      : styles.button
+                      : booked && booked.includes(evenB[i])
+                        ? styles.bookedButton
+                        : styles.button
                   }
                   onClick={() => this.handleClick(evenB[i])}
                 >

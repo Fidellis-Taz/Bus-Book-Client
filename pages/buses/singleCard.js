@@ -96,7 +96,7 @@ class SingleCard extends React.Component {
           <Row>
             <Col span={3}>
               <img
-                src={`${API_ROOT}/uploads/${bus.image}`}
+                src={`${API_ROOT}/uploads/${bus && bus.image}`}
                 alt="suspense"
                 className="bus-thumbnail"
               />
@@ -106,18 +106,18 @@ class SingleCard extends React.Component {
               {/* <p>{bus.travel.name}</p> */}
             </Col>
             <Col span={4}>
-              <p>{bus.type}</p>
+              <p>{bus && bus.type}</p>
             </Col>
             <Col span={4}>
               <strong>
-                <p>{bus.departure_time}</p>
+                <p>{bus && bus.departure_time}</p>
               </strong>
             </Col>
             <Col span={4}>
-              <p>{bus.seatsAvailable} Seats Left</p>
+              <p>{bus && bus.seatsAvailable} Seats Left</p>
             </Col>
             <Col span={4}>
-              <p>$ {`${bus.fare}`}</p>
+              <p>$ {`${bus && bus.fare}`}</p>
             </Col>
           </Row>
         </Card>

@@ -27,8 +27,9 @@ const SearchMenu = ({ buses, info }) => {
   const [locations, setLocations] = useState([]);
   const [formData, setFormData] = useState({
     startLocation: "",
-    endLocation: info.endLocation,
-    journeyDate: info.journeyDate
+    journeyDate: info && info.journeyDate,
+    endLocation: info && info.endLocation
+
   });
 
   const onChangeFrom = val => {
@@ -67,7 +68,7 @@ const SearchMenu = ({ buses, info }) => {
       </label>
       <Select
         showSearch
-        /*  defaultValue={info.startLocation} */
+        defaultValue={info && info.startLocation}
         style={{ width: 200, marginRight: "1rem" }}
         placeholder="eg- Dhangadhi"
         optionFilterProp="children"
@@ -90,7 +91,7 @@ const SearchMenu = ({ buses, info }) => {
       </label>
       <Select
         showSearch
-        defaultValue={info.endLocation}
+        defaultValue={info && info.endLocation}
         style={{ width: 200, marginRight: "1rem" }}
         placeholder="eg- Kathmandu"
         optionFilterProp="children"
@@ -102,7 +103,7 @@ const SearchMenu = ({ buses, info }) => {
           option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
         }
       >
-        {locations.map(location => (
+        {locations && locations.map(location => (
           <Option value={location._id} key={location._id}>
             {location.name}
           </Option>
@@ -115,7 +116,7 @@ const SearchMenu = ({ buses, info }) => {
         style={{ width: "20%" }}
         format="YYYY-MM-DD"
         disabledDate={disabledDate}
-        defaultValue={moment(info.journeyDate, "YYYY-MM-DD")}
+        defaultValue={moment(info && info.journeyDate, "YYYY-MM-DD")}
         onChange={onChangeDate}
       />
       <Button
