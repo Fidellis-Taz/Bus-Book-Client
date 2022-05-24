@@ -16,7 +16,7 @@ const Cards = ({ buses = [] }) => {
       <div className="cards">
         <div className="card-header">
           <h2>
-            <b>30</b> seats available in <strong>{buses.length}</strong> buses
+            <b>60</b> seats available in <strong>{buses.length}</strong> buses
           </h2>
         </div>
         <h4 className="card-header" style={{ color: "red" }}>
